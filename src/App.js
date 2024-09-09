@@ -2,8 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import './App.css';
 import Shop from './Shop/Shop';
