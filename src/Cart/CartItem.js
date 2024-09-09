@@ -14,7 +14,7 @@ const CartItem = ({ itemInCart }) => {
                 <td className="cart-left">
                         <p className="cart-left-name">{itemInCart.name }</p>
                         <p>{itemInCart.amount}</p>
-                        <p>$ {Math.round(itemInCart.totalPrice).toFixed(2)}</p>
+                        <p>$ {itemInCart.totalPrice.toFixed(2)}</p>
                 </td>
                 <td>
                     <button className="button-in-cart" onClick={()=> dispatch (deleteItemFromCart({cartItemId: itemInCart.id}))}>Delete</button>

@@ -331,7 +331,7 @@ h1 {
 .slide-moving {
   display: flex;
   flex-direction: column;
-  animation: animate 5s linear infinite ;
+  animation: animate 15s linear infinite ;
 }
 
 @keyframes animate {
