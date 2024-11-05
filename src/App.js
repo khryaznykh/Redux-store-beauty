@@ -9,9 +9,7 @@ import Shop from './Shop/Shop';
 import Cart from "./Cart/Cart";
 import Home from "./Home";
 
-
 function App() {
-
   return (
     <div className="App">
         <Router>
@@ -21,7 +19,6 @@ function App() {
                 <Route path="/Cart" element = {<Cart/>}/>
             </Routes>
         </Router>
-    
     </div>
   );
 }

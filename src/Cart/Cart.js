@@ -1,26 +1,21 @@
 import { useSelector } from "react-redux";
 import { getCartItems } from "../redux/CartSlice";
 import CartItem from "./CartItem";
-import CartShort from "./CartShort";
-import { useNavigate } from "react-router";
 import CartSlideShow from "./CartSlideShow";
+import ShopTop from "../Shop/ShopTop";
 
 const Cart = () => {
     const cartItems = useSelector(getCartItems);
-    const navigate = useNavigate();
-    console.log(cartItems)
     return (
         <div >
-            <div className="cart-top">
-                <CartShort/>
-                <button className="button button-black" onClick={()=> navigate(-1)} >Go Back</button>
-            </div>
+            <ShopTop/>
             <div className="cart-position-slide">
-                <div>
+                <div className="cart-main">
                 {cartItems.map (itemInCart =>
                     <div key={itemInCart.id}> 
-                        <CartItem itemInCart = { itemInCart }/>
+                        <CartItem itemInCart = { itemInCart } />
                     </div>)}
+                    <button className="button button-black">CHECK OUT</button>
                 </div>
                 <CartSlideShow/>
             </div>

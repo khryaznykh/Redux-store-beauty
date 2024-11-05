@@ -7,7 +7,6 @@ const ShopItem = ({ shopItem }) => {
     const [amount, setAmount] = useState(1);
     const dispatch = useDispatch()
     return (
-       
         <div className='shop-item' key={shopItem.id}>
             <img src={`${shopItem.image}.jpg`} alt="shop product" width={250}/>
             <p className="shop-item-item price">$ {shopItem.price}</p>

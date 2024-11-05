@@ -8,24 +8,35 @@ export const cartSlice = createSlice({
     reducers: {
         addItemsToCart: (state, action) => {
             const timeId = new Date().getTime();
-            // const itemExists = state.cartItems.find((item) => item.id === action.payload.id)
-            // if (!itemExists) return 
-            //     {state.cartItems[itemExists].reduce((totalForItem, itemExists)=> {
-            //         return itemExists.amount + totalForItem
-            //     }, 0)}
-                
+            const itemExists = state.cartItems.find((item) => item.itemID === action.payload.shopItem.id);
             
-            state.cartItems.push ({
+            if (itemExists) {
+                itemExists.amount += action.payload.amount;
+                itemExists.totalPrice += action.payload.shopItem.price * action.payload.amount;
+            }
+            
+            else {
+                state.cartItems.push ({
                 id: timeId,
                 itemID: action.payload.shopItem.id,
                 name: action.payload.shopItem.name,
                 image: action.payload.shopItem.image,
                 amount: action.payload.amount,
+                price: action.payload.shopItem.price,
                 totalPrice: action.payload.shopItem.price * action.payload.amount
             })
+        }
         },
 
-    
+        updateItemsInCart: (state, action) => {
+            const itemToUpdate = state.cartItems.find((item) => item.itemID === action.payload.itemInCart.itemID);
+                        
+            if (itemToUpdate) {
+                itemToUpdate.amount = action.payload.amount;
+                itemToUpdate.totalPrice = itemToUpdate.price * action.payload.amount;
+            }
+        },
+
         deleteItemFromCart:(state, action) => {
             state.cartItems = state.cartItems.filter (
                 cartItem => cartItem.id !== action.payload.cartItemId
@@ -48,6 +59,6 @@ export const getTotalPrice = state => {
   }
 
 export const getCartItems = state => state.cart.cartItems;
-export const { addItemsToCart, deleteItemFromCart } = cartSlice.actions;
+export const { addItemsToCart, deleteItemFromCart, updateItemsInCart } = cartSlice.actions;
 
 export default cartSlice.reducer

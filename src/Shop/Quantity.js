@@ -5,11 +5,11 @@ const Quantity = ({ amount, setAmount }) => {
         setAmount(newAmount)
     }
     const plusOne = () => {
-        const newAmount = amount+ 1;
+        const newAmount = amount + 1;
         setAmount(newAmount)
     }
     return (
-        <div>
+        <div className="in-cart">
             <button className="button-add" onClick={minusOne}> - </button>
             <span> {amount} </span>
             <button className="button-add" onClick={plusOne}> + </button>
