@@ -9,14 +9,14 @@ const Shop = () => {
     const selectedCategory = useSelector(getSelectedCategory);
     return(
         <div>
-            <div class="shutter door1"></div>
-            <div class="shutter door2"></div>
-            <div class="shutter door3"></div>
-            <div class="shutter door4"></div>
-            <div class="shutter door5"></div>
-            <div class="shutter door6"></div>
-            <div class="shutter door7"></div>
-            <div class="shutter door8"></div>
+            <div className="shutter door1"></div>
+            <div className="shutter door2"></div>
+            <div className="shutter door3"></div>
+            <div className="shutter door4"></div>
+            <div className="shutter door5"></div>
+            <div className="shutter door6"></div>
+            <div className="shutter door7"></div>
+            <div className="shutter door8"></div>
             <div className="opacity-delay">
                 <ShopTop/>
                 <AllCategories/>
