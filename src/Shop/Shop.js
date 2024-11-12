@@ -27,9 +27,8 @@ const Shop = () => {
                     return selectedCategory.toLowerCase() === shopItem.category;
                     })
                     .map ((shopItem) =>
-                        <div key={shopItem.id}>
-                            <ShopItem shopItem = {shopItem}/>
-                        </div>)}
+                        <ShopItem key={shopItem.id} shopItem = {shopItem}/>
+                    )}
                 </div>
             </div>
         </div>

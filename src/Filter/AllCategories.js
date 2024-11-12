@@ -6,9 +6,7 @@ const  AllCategories = () => {
         <div className="categories-container">
                 {categories.map ((category)=> {
                     return(
-                        <div key={category}>
-                            <Filtered category = {category}/>
-                        </div>
+                            <Filtered key={category} category = {category}/>
                 )})}
             </div>
     )

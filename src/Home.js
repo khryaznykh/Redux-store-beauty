@@ -5,14 +5,14 @@ function Home() {
     return (    
         <div className="untitled">
             <div className="untitled__slides">
-                {textCarousel.map ((text)=> {
+                {textCarousel.map ((text, index)=> {
                 return(
-                    <div className="untitled__slide">
+                    <div key={index} className="untitled__slide">
                         <div className="untitled__slideBg"></div>
                         <div className="untitled__slideContent">
                             <span>Cosmetiques de Luxe</span> 
                             <p>{text}</p>
-                            <Link to="/Shop">    <button className='button button-white'> SHOP NOW </button></Link>
+                            <Link to="/Shop"><button className='button button-white'> SHOP NOW </button></Link>
                         </div>
                     </div>)
                 })}

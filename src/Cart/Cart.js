@@ -12,9 +12,8 @@ const Cart = () => {
             <div className="cart-position-slide">
                 <div className="cart-main">
                 {cartItems.map (itemInCart =>
-                    <div key={itemInCart.id}> 
-                        <CartItem itemInCart = { itemInCart } />
-                    </div>)}
+                        <CartItem key={itemInCart.id} itemInCart = { itemInCart } />
+                    )}
                     <button className="button button-black">CHECK OUT</button>
                 </div>
                 <CartSlideShow/>

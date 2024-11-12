@@ -376,11 +376,11 @@ h1 {
   margin-left: 50px;
 }
 .one {
-  width: 30%;
+  width: 200px;
   margin-left: 50px;
 }
 .two {
-  width: 40%;
+  width: 300px;
 }
 .cart-left-name {
   font-weight: bolder;
@@ -636,6 +636,18 @@ h1 {
 .shutter.door4 {
   z-index: 2;
 }
+@media all and (max-width: 1100px) {
+  .one {
+    width: 180px;
+    margin-left: 20px;
+  }
+  .two {
+    width: 150px;
+  }
+  .cart-slides{
+    width: 200px;
+  }
+}
 
 @media all and (max-width: 800px){
   .cart-slides{
@@ -655,6 +667,7 @@ h1 {
     width: 100px;
     font-size: 15px;
   }
+
 }
 @media all and (max-width: 500px) {
   .shop-logo {
